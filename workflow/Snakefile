@@ -1,0 +1,61 @@
+configfile: "config.yml"
+
+# REFERENCES = ["Homo_sapiens_assembly38.dbsnp138.vcf", "Homo_sapiens_assembly38.dbsnp138.vcf.idx", "Homo_sapiens_assembly38.dict", "Homo_sapiens_assembly38.fasta", "Homo_sapiens_assembly38.fasta.fai"]
+
+# def refs_list(wildcards):
+#     print(config["references"])
+#     refs = []
+#     for ref in config["references"][wildcards.references]:
+#         print(ref)
+#         filename = ref.split("_v0_",1)[1]
+#         refs.append(filename)
+#     return refs
+
+rule all:
+    input:
+        expand(
+            "references/{ref}",
+            ref=config["references"].values()
+        )
+
+rule download_refs:
+    output:
+        expand(
+            "references/{ref}",
+            ref=config["references"].values()
+        )
+    run:
+        print(config["references"])
+        for ref in config["references"].values():
+            print(ref)
+            shell("gsutil -m cp gs://genomics-public-data/resources/broad/hg38/v0/{ref} references/", ref=ref)
+
+rule mark_duplicates:
+    input:
+        bams="Mapped/{sample}.bam",
+    # optional to specify a list of BAMs; this has the same effect
+    # of marking duplicates on separate read groups for a sample
+    # and then merging
+    output:
+        bam="dedup/{sample}.bam",
+        metrics="dedup/{sample}.metrics.txt",
+    log:
+        "logs/picard/dedup/{sample}.log",
+    params:
+        extra="--REMOVE_DUPLICATES true",
+    # optional specification of memory usage of the JVM that snakemake will respect with global
+    # resource restrictions (https://snakemake.readthedocs.io/en/latest/snakefiles/rules.html#resources)
+    # and which can be used to request RAM during cluster job submission as `{resources.mem_mb}`:
+    # https://snakemake.readthedocs.io/en/latest/executing/cluster.html#job-properties
+    resources:
+        mem_mb=1024,
+    wrapper:
+        "v1.14.0/bio/picard/markduplicates"
+
+
+echo "** Marking Duplicates: ${DIRPT}/MarkDuplicates/B${batch}_ID${ToilIDnum}_S${sampName}.bam"
+# ~ 10 min
+$gatk MarkDuplicates \
+-I $f \
+-O "${DIRPT}/MarkDupe/B${batch}_ID${ToilIDnum}_S${sampName}.bam" \
+-M "${DIRPT}/MarkDupe/Metrics/B${batch}_ID${ToilIDnum}_S${sampName}.txt"
