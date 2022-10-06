@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"name": "PhyloTree",
+			"path": "../glab_R/OV/PhyloTree"
+		},
+		{
+			"name": "PhyloTree_SM",
+			"path": "."
+		},
+		{
+			"name": "PhyloTree",
+			"path": "../../Dropbox/OV/PhyloTree"
+		},
+		{
+			"path": "../snakemake-tutorial"
+		},
+		{
+			"path": "../rna-seq-star-deseq2"
+		}
+	],
+	"settings": {}
+}

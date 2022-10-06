@@ -1,3 +1,4 @@
+
 references:
   dbsnp_ref: Homo_sapiens_assembly38.dbsnp138.vcf
   dbsnp_ref_idx: Homo_sapiens_assembly38.dbsnp138.vcf.idx
@@ -9,4 +10,5 @@ samples:
   A: data/samples/A.fastq
   B: data/samples/B.fastq
   C: data/samples/C.fastq
+
 prior_mutation_rate: 0.001
