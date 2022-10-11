@@ -1,6 +1,6 @@
 
 ##### Setup #####
-configfile: "config.yml"
+configfile: "config/config.yml"
 report: "report/workflow.rst"
 
 ##### Load Rules #####

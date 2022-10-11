@@ -1,25 +1,63 @@
 import pandas as pd
 
-samples = pd.read_table("config/units.tsv")
+configfile: "config/config.yml"
 
-rule mark_duplicates:
+def sample2UUID(wildcards):
+    units_df = pd.read_table("config/units.tsv")
+    UUID_path = units_df[units_df['Sample_ID'] == wildcards.sample_ID].iloc[0]['Mapped']
+    return(UUID_path)
+
+rule get_mapped:
     input:
-        bams="mapped/{sample}.bam",
-    # optional to specify a list of BAMs; this has the same effect
-    # of marking duplicates on separate read groups for a sample
-    # and then merging
+        bam_path = sample2UUID
     output:
-        bam="/dedup/{sample}_DD.bam",
-        metrics="dedup/{sample}_DD.metrics.txt",
-    log:
-        "logs/picard/dedup/{sample}.log",
-    params:
-        extra="--REMOVE_DUPLICATES true",
-    # optional specification of memory usage of the JVM that snakemake will respect with global
-    # resource restrictions (https://snakemake.readthedocs.io/en/latest/snakefiles/rules.html#resources)
-    # and which can be used to request RAM during cluster job submission as `{resources.mem_mb}`:
-    # https://snakemake.readthedocs.io/en/latest/executing/cluster.html#job-properties
-    resources:
-        mem_mb=1024,
-    wrapper:
-        "v1.14.0/bio/picard/markduplicates"
+        "mapped/{sample_ID}.bam"
+    run:
+        sample_ID = UUID2sample({input})
+        shell("echo {input.bam_path}; cp {input.bam_path} /mapped/{sample_ID}", sample_ID=sample_ID)
+
+# rule deduplicate:
+#     input:
+#         bam=unit_paths
+#     output:
+#         bam="/dedupe/{sample}_DD.bam",
+#         metrics="/dedupe/{sample}_DD.metrics.txt",
+#     log:
+#         "logs/dedupe/{sample}.log"
+#     shell:
+#         'gatk --java-options ""-Xmx4g"" '
+#             'MarkDuplicates '
+#             '-I {input.bam} '
+#             '-O {output.bam} '
+#             '-M {output.metrics} '
+#             '--CREATE_INDEX true'
+
+
+rule split_n_cigar_reads:
+    input:
+        
+    output:
+
+rule fix_RG:
+    input:
+    output:
+
+rule fix_RO:
+    input:
+    output:
+
+rule validate_BAM:
+    input:
+    output:
+
+rule haplotype_caller:
+    input:
+    output:
+
+rule genotype_GVCFs:
+    input:
+    output:
+
+rule validate_VCF:
+    input:
+    output:

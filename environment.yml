@@ -1,6 +1,9 @@
 channels:
-  - bioconda
   - conda-forge
+  - bioconda
 dependencies:
+  - snakemake-minimal
   - google-cloud-sdk >=403.0.0
-  - google-crc32c
+  - crcmod
+  - pandas
+  - gatk4
