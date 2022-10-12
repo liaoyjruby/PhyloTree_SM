@@ -1,9 +1,5 @@
+configfile: "config/config.yaml"
 import pandas as pd
-
-configfile: "config/config.yml"
-workdir: config['workdir']
-wildcard_constraints:
-    sample = '|'.join(config["samples"])
 
 def sample2UUID(wildcards):
     units_df = pd.read_table(config["units"])
@@ -14,7 +10,7 @@ rule get_mapped:
     input:
         bam_path = sample2UUID
     output:
-        "mapped/{sample}.bam"
+        protected("mapped/{sample}.bam")
     shell:
         "cp {input.bam_path} mapped/{wildcards.sample}.bam"
 
@@ -33,7 +29,7 @@ rule deduplicate:
             '-O {output.bam} '
             '-M {output.metrics} '
             '--REMOVE_DUPLICATES true '
-            '--CREATE_INDEX true'
+            '--CREATE_INDEX true &> {log}'
 
 rule split_n_cigar_reads:
     input:
@@ -47,7 +43,7 @@ rule split_n_cigar_reads:
         'gatk SplitNCigarReads '
             '-R {input.ref} '
             '-I {input.bam} '
-            '-O {output.bam} '
+            '-O {output.bam} &> {log}'
 
 def getID(sample_ID):
     units_df = pd.read_table(config["units"])

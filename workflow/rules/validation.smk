@@ -1,3 +1,5 @@
+workdir: config['dir']
+
 rule validate_BAM:
     input:
         bam = "{step}/{sample}.bam",

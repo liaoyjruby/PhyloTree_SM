@@ -1,7 +1,6 @@
-
 ##### Setup #####
-configfile: "config/config.yml"
-# report: "report/workflow.rst"
+configfile: "config/config.yaml"
+workdir: config['dir']
 
 ##### Load Rules #####
 include: "rules/ref.smk"
@@ -12,7 +11,5 @@ include: "rules/mergesamples.smk"
 ##### Target Rules #####
 rule all:
     input:
-        expand(
-            "hcVCF/{sample}.vcf.gz",
-            sample=config["samples"]
-        )
+        expand("references/{ref}", ref=config["references"].values())
+

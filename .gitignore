@@ -6,3 +6,4 @@ mapped/**
 .snakemake/**
 *.bai
 *.bam
+.DS_Store

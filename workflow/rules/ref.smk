@@ -1,3 +1,5 @@
+configfile: "config/config.yaml"
+
 rule get_refs:
     output:
         expand(
