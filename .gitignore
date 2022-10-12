@@ -7,3 +7,5 @@ mapped/**
 *.bai
 *.bam
 .DS_Store
+*.code-workspace
+*.metrics.txt
