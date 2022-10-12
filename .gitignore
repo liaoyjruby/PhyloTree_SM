@@ -8,4 +8,5 @@ mapped/**
 *.bam
 .DS_Store
 *.code-workspace
-*.metrics.txt
+**/*.metrics.txt
+**/*.g.vcf.gz

@@ -44,9 +44,9 @@ rule split_n_cigar_reads:
             '-I {input.bam} '
             '-O {output.bam} &> {log}'
 
-def getID(sample_ID):
+def getID(wildcards):
     units_df = pd.read_table(config["units"])
-    uID = units_df[units_df['Sample_ID'] == sample_ID].iloc[0]['ID']
+    uID = units_df[units_df['Sample_ID'] == wildcards.sample].iloc[0]['ID']
     return(str(uID))
 
 rule fix_RG:
@@ -57,8 +57,8 @@ rule fix_RG:
     log:
         "logs/fixRG/{sample}.log"
     run:
-        print(sample)
-        uID = getID(wildcards.sample_ID)
+        print(wildcards.sample)
+        uID = getID(wildcards)
         print(uID)
         shell(
             """
@@ -67,10 +67,10 @@ rule fix_RG:
                 -O {output} \
                 -SO "coordinate" \
                 -LB "bar" \
-                -SM "{wildcards.sample_ID}" \
+                -SM "{wildcards.sample}" \
                 -PL "illumina" \
                 -PU "ID{uID}" \
-                --CREATE_INDEX true
+                --CREATE_INDEX true  &> {log}
             """)
 
 rule fix_RO:
@@ -89,7 +89,7 @@ rule fix_RO:
             -R {input.ref_fasta} \
             -SD {input.ref_dict} \
             -O {output} \
-            --CREATE_INDEX true
+            --CREATE_INDEX true &> {log}
         """
 
 rule haplotype_caller:
@@ -107,7 +107,7 @@ rule haplotype_caller:
             -R {input.ref} \
             -O {output} \
             -ERC "GVCF" \
-            -OVI true
+            -OVI true &> {log}
         """
 
 rule genotype_GVCFs:
@@ -124,5 +124,5 @@ rule genotype_GVCFs:
             -V {input.gvcf} \
             -R {input.ref} \
             -O {output} \
-            -OVI true
+            -OVI true &> {log}
         """
