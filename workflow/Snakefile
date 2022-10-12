@@ -1,10 +1,11 @@
 
 ##### Setup #####
 configfile: "config/config.yml"
-report: "report/workflow.rst"
+# report: "report/workflow.rst"
 
 ##### Load Rules #####
 include: "rules/ref.smk"
+include: "rules/validation.smk"
 include: "rules/persample.smk"
 include: "rules/mergesamples.smk"
 
@@ -12,6 +13,6 @@ include: "rules/mergesamples.smk"
 rule all:
     input:
         expand(
-            "references/{ref}",
-            ref=config["references"].values()
+            "hcVCF/{sample}.vcf.gz",
+            sample=config["samples"]
         )

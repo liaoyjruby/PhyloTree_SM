@@ -2,8 +2,10 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
+  - ipykernel
   - snakemake-minimal
   - google-cloud-sdk >=403.0.0
   - crcmod
   - pandas
   - gatk4
+  - graphviz

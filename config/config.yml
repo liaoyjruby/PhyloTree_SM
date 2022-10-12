@@ -1,3 +1,9 @@
+workdir: "/Users/liaoyj/Documents/PhyloTree_SM"
+units: "config/units.tsv"
+
+samples: ["X1a", "X1b", "X3a", "X3b", "X11", "X10_1", "X10_2"]
+
+verbosity: "WARNING"
 
 references:
   dbsnp_ref: Homo_sapiens_assembly38.dbsnp138.vcf
@@ -6,4 +12,3 @@ references:
   fasta_ref: Homo_sapiens_assembly38.fasta
   fasta_ref_idx: Homo_sapiens_assembly38.fasta.fai
 
-samples: ["X1a", "X1b", "X3a", "X3b", "X11", "X10_1", "X10_2"]
