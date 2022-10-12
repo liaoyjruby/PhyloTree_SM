@@ -1,4 +1,3 @@
-workdir: config['dir']
 
 rule validate_BAM:
     input:

@@ -1,4 +1,3 @@
-configfile: "config/config.yaml"
 import pandas as pd
 
 def sample2UUID(wildcards):
@@ -34,7 +33,7 @@ rule deduplicate:
 rule split_n_cigar_reads:
     input:
         ref="references/Homo_sapiens_assembly38.fasta",
-        bam="dedupe/{sample}.bam"
+        bam="dedupe/{sample}.bam",
     output:
         bam="cigar/{sample}.bam"
     log:

@@ -3,7 +3,7 @@ channels:
   - bioconda
 dependencies:
   - ipykernel
-  - snakemake-minimal
+  - snakemake
   - google-cloud-sdk >=403.0.0
   - crcmod
   - pandas

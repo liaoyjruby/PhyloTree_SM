@@ -1,13 +1,9 @@
 configfile: "config/config.yaml"
 
-workdir: config['dir']
-
 include: "rules/ref.smk"
 include: "rules/validation.smk"
 include: "rules/persample.smk"
-include: "rules/mergesamples.smk"
 
 rule all:
     input:
-        expand("references/{ref}", ref=config["references"].values())
-
+        expand("hcVCF/{sample}.vcf.gz", sample=config["samples"])

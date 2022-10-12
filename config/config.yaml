@@ -1,4 +1,4 @@
-dir: "/Volumes/RubsSSD 1/PhyloTree_SM/"
+dir: "/Volumes/RubsSSD 1/PhyloTree_SM"
 units: "config/units.tsv"
 
 samples: ["X1a", "X1b", "X3a", "X3b", "X11", "X10_1", "X10_2"]
