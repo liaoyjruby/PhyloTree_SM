@@ -2,6 +2,8 @@ references/**
 resources/**
 logs/**
 mapped/**
+merged/**
+tree/**
 .snakemake
 .snakemake/**
 *.bai
@@ -9,11 +11,8 @@ mapped/**
 *_SUMMARY.txt
 .DS_Store
 *.code-workspace
-**/*.metrics.txt
 *.vcf.gz
 *.vcf.gz.tbi
 *.txt
 *.png
-merged/**
-tree/**
 *.py

@@ -2,9 +2,11 @@
 
 treefile = snakemake@input[[1]]
 
+# TODO: add annotation option
+
 require(treeio) # Read in tree
 require(ggtree) # Visualization
-require(ggplot2)
+require(ggplot2) # Plot and save
 require(ape) # Pairwise distances
 require(pheatmap) # Distance heatmap
 require(RColorBrewer)

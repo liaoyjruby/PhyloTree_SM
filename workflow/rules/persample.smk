@@ -2,7 +2,7 @@ import pandas as pd
 
 def sample2UUID(wildcards):
     units_df = pd.read_table(config["units"])
-    UUID_path = units_df[units_df['Sample_ID'] == wildcards.sample].iloc[0]['Mapped']
+    UUID_path = units_df[units_df['Sample_ID'] == wildcards.sample].iloc[0]['Mapped_Path']
     return(UUID_path)
 
 rule get_mapped:
@@ -22,6 +22,8 @@ rule deduplicate:
         metrics="dedupe/{sample}.metrics.txt",
     log:
         "logs/dedupe/{sample}.log"
+    conda:
+        "../envs/gatk.yaml"
     shell:
         'gatk --java-options ""-Xmx4g"" '
             'MarkDuplicates '
@@ -39,6 +41,8 @@ rule split_n_cigar_reads:
         bai="cigar/{sample}.bai"
     log:
         "logs/cigar/{sample}.log"
+    conda:
+        "../envs/gatk.yaml"
     shell:
         'gatk SplitNCigarReads '
             '-R {input.ref} '
@@ -53,27 +57,28 @@ def getID(wildcards):
 rule fix_RG:
     input:
         bam="cigar/{sample}.bam",
-        bai="cigar/{sample}.bai"
+        bai="cigar/{sample}.bai",
+        uID=getID
     output:
         # temp("fixRG/{sample}.bam")
         bam="fixRG/{sample}.bam",
         bai="fixRG/{sample}.bai"
     log:
         "logs/fixRG/{sample}.log"
-    run:
-        uID = getID(wildcards)
-        shell(
-            """
-            gatk AddOrReplaceReadGroups \
-                -I {input.bam} \
-                -O {output.bam} \
-                -SO "coordinate" \
-                -LB "bar" \
-                -SM "{wildcards.sample}" \
-                -PL "illumina" \
-                -PU "ID{uID}" \
-                --CREATE_INDEX true  &> {log}
-            """)
+    conda:
+        "../envs/gatk.yaml"
+    shell:
+        """
+        gatk AddOrReplaceReadGroups \
+            -I {input.bam} \
+            -O {output.bam} \
+            -SO "coordinate" \
+            -LB "bar" \
+            -SM "{wildcards.sample}" \
+            -PL "illumina" \
+            -PU "ID{uID}" \
+            --CREATE_INDEX true  &> {log}
+        """
 
 rule fix_RO:
     input:
@@ -87,6 +92,8 @@ rule fix_RO:
         bai="fixRO/{sample}.bai"
     log:
         "logs/fixRO/{sample}.log"
+    conda:
+        "../envs/gatk.yaml"
     shell:
         """
         gatk ReorderSam \
@@ -107,6 +114,8 @@ rule haplotype_caller:
         gvcftbi="hcGVCF/{sample}.g.vcf.gz.tbi"
     log:
         "logs/hcGVCF/{sample}.log"
+    conda:
+        "../envs/gatk.yaml"
     shell:
         """
         gatk HaplotypeCaller --java-options "-Xmx6g" \
@@ -127,6 +136,8 @@ rule genotype_GVCFs:
         vcftbi="hcVCF/{sample}.vcf.gz.tbi"
     log:
         "logs/hcVCF/{sample}.log"
+    conda:
+        "../envs/gatk.yaml"
     shell:
         """
         gatk GenotypeGVCFs --java-options "-Xmx4g" \

@@ -1,0 +1,11 @@
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base
+  - r-ggplot2
+  - r-ape
+  - r-pheatmap
+  - r-RColorBrewer
+  - bioconductor-treeio
+  - bioconductor-ggtree

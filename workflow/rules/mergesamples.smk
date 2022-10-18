@@ -1,7 +1,9 @@
+import pandas as pd
+samples = list(pd.read_table(config["units"])['Sample_ID'])
 
 rule build_VCF_list:
     input:
-        expand("hcVCF/{sample}.vcf.gz", sample=config["samples"])
+        expand("hcVCF/{sample}.vcf.gz", sample=samples)
     output:
         "merged/VCFList.txt"
     run:
@@ -12,13 +14,15 @@ rule build_VCF_list:
 rule merge_VCFs:
     input:
         vcflist = "merged/VCFList.txt",
-        vcfs = expand("hcVCF/{sample}.vcf.gz", sample=config["samples"]),
-        vcfidxs = expand("hcVCF/{sample}.vcf.gz.tbi", sample=config["samples"])
+        vcfs = expand("hcVCF/{sample}.vcf.gz", sample=samples),
+        vcfidxs = expand("hcVCF/{sample}.vcf.gz.tbi", sample=samples)
     output:
         vcf="merged/VCFMerged.vcf.gz",
         vcfidx="merged/VCFMerged.vcf.gz.tbi"
     log:
         "logs/merged/VCFMerged.log"
+    conda:
+        "../envs/gatk.yaml"
     shell:
         'bcftools merge '
             '-l {input.vcflist} '
@@ -31,6 +35,8 @@ rule get_vcf2phylip_script:
         "workflow/rules/scripts/vcf2phylip.py"
     log:
         "logs/scripts/get_vcf2phylip_script.log"
+    conda:
+        "../envs/wget.yaml"
     shell:
         'wget -O {output} https://raw.githubusercontent.com/edgardomortiz/vcf2phylip/master/vcf2phylip.py  &> {log}'
 
@@ -41,6 +47,8 @@ rule vcf2phylip:
         vcfidx="merged/VCFMerged.vcf.gz.tbi"
     output:
         "merged/VCFMerged.min4.phy"
+    conda:
+        "../envs/cmd.yaml"
     shell:
         'python {input.vcf2phy} '
             '-i {input.vcf} '
@@ -52,6 +60,8 @@ rule iqtree:
         "merged/VCFMerged.min4.phy"
     output:
         "tree/{treename}.treefile"
+    conda:
+        "../envs/tree.yaml"
     shell:
         'iqtree2 -s {input} '
             '-pre tree/{wildcards.treename} '
@@ -69,5 +79,7 @@ rule plot_tree:
         "figures/tree_eqan.png",
         "figures/tree_daylight.png",
         "figures/heatmap_distances.png"
+    conda:
+        "../envs/r.yaml"
     script:
         "scripts/plot_tree.R"

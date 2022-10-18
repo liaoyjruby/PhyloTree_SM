@@ -1,0 +1,5 @@
+channels:
+  - conda-forge
+dependencies:
+  - google-cloud-sdk >=403.0
+  - crcmod >=1.7

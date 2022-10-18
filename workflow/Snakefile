@@ -1,25 +1,17 @@
 configfile: "config/config.yaml"
+include: "rules/common.smk"
+
+##### Target rules #####
+
+rule all:
+    input:
+        "figures/tree_eqan.png",
+        "figures/dag.png"
+
+
+##### Modules #####
 
 include: "rules/ref.smk"
 include: "rules/validation.smk"
 include: "rules/persample.smk"
 include: "rules/mergesamples.smk"
-
-rule all:
-    input:
-        expand("fixRO/{sample}.bam", sample=config["samples"]),
-        expand("validateBAM/{sample}_fixRO_SUMMARY.txt", sample=config["samples"]),
-        "figures/tree_eqan.png",
-        "dag.png"
-
-# Run up until before HC step
-rule preHC:
-    input:
-        expand("fixRO/{sample}.bam", sample=config["samples"]),
-        expand("validateBAM/{sample}_fixRO_SUMMARY.txt", sample=config["samples"])
-
-rule dag:
-    output:
-        "dag.png"
-    shell:
-        "snakemake -n --dag | dot -Tpng > dag.png"

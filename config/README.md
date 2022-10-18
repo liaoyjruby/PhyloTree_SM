@@ -1,6 +1,8 @@
 # General Settings
 
-# Sample & Unit Sheet
+Modify `config.yaml` as needed according to comments in the file.
 
-- samples.tsv: cohort annotation sheet
-- units.tsv: per sample pipeline / tracker; match UUID with sample name
+# Units & Samples Sheets
+
+- `units.tsv`: Required columns `Sample_ID` and `ID`. Add column `Mapped_Path` with absolute paths if aligned BAM files are elsewhere.
+- `samples.tsv`: Sample annotation sheet. Add columns with information about conditions of interest as desired.

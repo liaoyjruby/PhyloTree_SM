@@ -7,6 +7,8 @@ rule get_refs2:
         dict_ref = "references/Homo_sapiens_assembly38.dict",
         dbsnp_ref = "references/Homo_sapiens_assembly38.dbsnp138.vcf",
         dbsnp_ref_idx = "references/Homo_sapiens_assembly38.dbsnp138.vcf.idx"
+    conda:
+        "../envs/gcloud.yaml"
     shell:
         """
         gsutil -o \"GSUtil:parallel_process_count=1\" -m cp gs://genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta references/

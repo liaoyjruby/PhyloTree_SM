@@ -1,6 +1,8 @@
 units: "config/units.tsv"
+samples: "config/samples.tsv"
 
-samples: ["X1a", "X1b", "X3a", "X3b", "X11", "X10_1", "X10_2"]
+# TODO: List conditions (columns in "config/samples.tsv") to annotate tree figures by
+conditions: ["Cohort_Specific", "Platinum_Sensitivity", "Batch"]
 
 references:
   dbsnp_ref: Homo_sapiens_assembly38.dbsnp138.vcf
