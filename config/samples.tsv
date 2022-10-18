@@ -1,1 +1,60 @@
-Sample_ID	Therapy_Period	Cohort	Cohort_Specific	Platinum_Sensitivity	Sample_Type	Sample_Type_Specific	Batch	Paired	Sample	Matched	High NEX10_1	PatientDerivedCellLines	NA (CellLine)	NA (CellLine)	NA (CellLine)	NA (CellLine)	Cryopreserved Cells	1	F	10	Replicate	X10_2	PatientDerivedCellLines	NA (CellLine)	NA (CellLine)	NA (CellLine)	NA (CellLine)	Cryopreserved Cells	2	F	10	Replicate	X10_3	PatientDerivedCellLines	NA (CellLine)	NA (CellLine)	NA (CellLine)	NA (CellLine)	Cryopreserved Cells	3	F	10	Replicate	X10_4	PatientDerivedCellLines	NA (CellLine)	NA (CellLine)	NA (CellLine)	NA (CellLine)	Cryopreserved Cells	4	F	10	Replicate	X11	PatientDerivedCellLines	NA (CellLine)	NA (CellLine)	NA (CellLine)	NA (CellLine)	Cryopreserved Cells (Xenograft)	1	F	11	F	X12a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Sensitive	Tumor	Omental tumor	2	T	12	T	X12b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Ovary tumor	2	T	12	T	X13a	Pre-Therapy	Recurrent	Pre-NACT	Platinum Sensitive	Tumor	Ovary tumor	2	T	13	T	MX13b	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Pleural fluid	2	T	13	T	TX13c	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Ascites	3	T	13	T	MX14a	Pre-Therapy	Post-NACT & Recurrent	Pre-NACT	Platinum Sensitive	Fluid	Ascites	2	T	14	T	MX14b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Omental tumor	2	T	14	T	MX14c	Post-Therapy	Recurrent	Recurrent	Platinum Sensitive	Lymph node	Lymph Node	3	T	14	T	TX15a	Pre-Therapy	Recurrent	Pre-NACT	Platinum Resistant	Fluid	Ascites	2	T	15	T	MX15b	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Tumor	Vaginal biopsy	2	T	15	T	TX16a	Pre-Therapy	Post-NACT & Recurrent	Pre-NACT	Platinum Resistant	Fluid	Ascites	2	T	16	T	MX16b	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Omental tumor	2	T	16	T	MX16c	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Ascites	3	T	16	T	TX17a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Sensitive	Fluid	Ascites	3	T	17	T	X17b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Omental tumor	3	T	17	T	X18a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Sensitive	Fluid	Ascites	3	T	18	T	X18b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Omental tumor	3	T	18	T	X19	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Pleural fluid	3	F	19	F	X1a	Pre-Therapy	Post-NACT & Recurrent	Pre-NACT	Platinum Sensitive	Fluid	Ascites	1	T	1	T	X1b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Omental tumor	1	T	1	T	X1C	Post-Therapy	Recurrent	Recurrent	NA	Fluid	Ascites	4	T	1	T	X20	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Omental tumor	3	F	20	F	X21	Pre-Therapy	NA	NA	Platinum Resistant	Tumor	Omental tumor	3	F	21	F	X22	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Ovary tumor	3	F	22	F	X23	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Ascites	3	F	23	F	X24	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Ovary tumor	3	F	24	F	X25a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Sensitive	Fluid	Ascites	4	T	25	T	X25b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Ovary tumor	4	T	25	T	X26a	Pre-Therapy	Post-NACT	Pre-NACT	NA	Fluid	Ascites	4	T	26	T	X26b	Post-Therapy	Post-NACT	Post-NACT	NA	Tumor	Ovary tumor	4	T	26	T	X27a	Pre-Therapy	Recurrent	Pre-NACT	Platinum Sensitive	Tumor	Ovary tumor	4	T	27	T	X27b	Post-Therapy	Recurrent	Recurrent	Platinum Sensitive	Tumor	Colon tumor	4	T	27	T	X28	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Pleural fluid	4	F	28	F	X29	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Pleural fluid	4	F	29	F	X2a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Resistant	Fluid	Ascites	1	T	2	T	X2b	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Omental tumor	1	T	2	T	X30	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Ascites	4	F	30	F	X3a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Resistant	Fluid	Ascites	1	T	3	T	X3b	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Fluid	Ascites	1	T	3	T	X4a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Resistant	Fluid	Pleural fluid	1	T	4	T	X4b	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Uterine tumor	1	T	4	T	X5a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Resistant	Fluid	Ascites	1	T	5	T	X5b	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Ovary tumor	1	T	5	T	X6a	Pre-Therapy	Post-NACT & Recurrent	Pre-NACT	Platinum Resistant	Fluid	Ascites	1	T	6	T	MX6b	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Tumor	Bowel tumor	1	T	6	T	TX6c	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Ovary tumor	3	T	6	T	MX7a	Pre-Therapy	Recurrent	Pre-NACT	Platinum Resistant	Tumor	Ovary tumor	1	T	7	T	MX7b	Post-Therapy	Recurrent	Recurrent	Platinum Sensitive	Tumor	Colon tumor	1	T	7	T	TX8a	Control	NA (Control)	NA (Control)	Platinum Sensitive	Fluid	Ascites	1	F	8	T	X8s	Control	NA (Control)	NA (Control)	Platinum Sensitive	Tumor	Omental tumor	1	F	8	T	X9a	Control	NA (Control)	NA (Control)	Platinum Sensitive	Fluid	Ascites	1	F	9	T	X9p	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Pleural fluid	4	T	9	T	X9s_1	Control	NA (Control)	NA (Control)	Platinum Sensitive	Tumor	Ovary tumor	1	F	9	T	X9s_4	Pre-Therapy	Recurrent	Pre-NACT	Platinum Sensitive	Tumor	Ovary tumor	4	T	9	T	
+Sample_ID	Therapy_Period	Cohort	Cohort_Specific	Platinum_Sensitivity	Sample_Type	Sample_Type_Specific	Batch	Paired	Sample	Matched	High NE
+X10_1	PatientDerivedCellLines	NA (CellLine)	NA (CellLine)	NA (CellLine)	NA (CellLine)	Cryopreserved Cells	1	F	10	Replicate	
+X10_2	PatientDerivedCellLines	NA (CellLine)	NA (CellLine)	NA (CellLine)	NA (CellLine)	Cryopreserved Cells	2	F	10	Replicate	
+X10_3	PatientDerivedCellLines	NA (CellLine)	NA (CellLine)	NA (CellLine)	NA (CellLine)	Cryopreserved Cells	3	F	10	Replicate	
+X10_4	PatientDerivedCellLines	NA (CellLine)	NA (CellLine)	NA (CellLine)	NA (CellLine)	Cryopreserved Cells	4	F	10	Replicate	
+X11	PatientDerivedCellLines	NA (CellLine)	NA (CellLine)	NA (CellLine)	NA (CellLine)	Cryopreserved Cells (Xenograft)	1	F	11	F	
+X12a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Sensitive	Tumor	Omental tumor	2	T	12	T	
+X12b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Ovary tumor	2	T	12	T	
+X13a	Pre-Therapy	Recurrent	Pre-NACT	Platinum Sensitive	Tumor	Ovary tumor	2	T	13	T	M
+X13b	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Pleural fluid	2	T	13	T	T
+X13c	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Ascites	3	T	13	T	M
+X14a	Pre-Therapy	Post-NACT & Recurrent	Pre-NACT	Platinum Sensitive	Fluid	Ascites	2	T	14	T	M
+X14b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Omental tumor	2	T	14	T	M
+X14c	Post-Therapy	Recurrent	Recurrent	Platinum Sensitive	Lymph node	Lymph Node	3	T	14	T	T
+X15a	Pre-Therapy	Recurrent	Pre-NACT	Platinum Resistant	Fluid	Ascites	2	T	15	T	M
+X15b	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Tumor	Vaginal biopsy	2	T	15	T	T
+X16a	Pre-Therapy	Post-NACT & Recurrent	Pre-NACT	Platinum Resistant	Fluid	Ascites	2	T	16	T	M
+X16b	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Omental tumor	2	T	16	T	M
+X16c	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Ascites	3	T	16	T	T
+X17a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Sensitive	Fluid	Ascites	3	T	17	T	
+X17b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Omental tumor	3	T	17	T	
+X18a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Sensitive	Fluid	Ascites	3	T	18	T	
+X18b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Omental tumor	3	T	18	T	
+X19	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Pleural fluid	3	F	19	F	
+X1a	Pre-Therapy	Post-NACT & Recurrent	Pre-NACT	Platinum Sensitive	Fluid	Ascites	1	T	1	T	
+X1b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Omental tumor	1	T	1	T	
+X1C	Post-Therapy	Recurrent	Recurrent	NA	Fluid	Ascites	4	T	1	T	
+X20	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Omental tumor	3	F	20	F	
+X21	Pre-Therapy	NA	NA	Platinum Resistant	Tumor	Omental tumor	3	F	21	F	
+X22	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Ovary tumor	3	F	22	F	
+X23	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Ascites	3	F	23	F	
+X24	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Ovary tumor	3	F	24	F	
+X25a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Sensitive	Fluid	Ascites	4	T	25	T	
+X25b	Post-Therapy	Post-NACT	Post-NACT	Platinum Sensitive	Tumor	Ovary tumor	4	T	25	T	
+X26a	Pre-Therapy	Post-NACT	Pre-NACT	NA	Fluid	Ascites	4	T	26	T	
+X26b	Post-Therapy	Post-NACT	Post-NACT	NA	Tumor	Ovary tumor	4	T	26	T	
+X27a	Pre-Therapy	Recurrent	Pre-NACT	Platinum Sensitive	Tumor	Ovary tumor	4	T	27	T	
+X27b	Post-Therapy	Recurrent	Recurrent	Platinum Sensitive	Tumor	Colon tumor	4	T	27	T	
+X28	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Pleural fluid	4	F	28	F	
+X29	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Pleural fluid	4	F	29	F	
+X2a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Resistant	Fluid	Ascites	1	T	2	T	
+X2b	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Omental tumor	1	T	2	T	
+X30	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Ascites	4	F	30	F	
+X3a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Resistant	Fluid	Ascites	1	T	3	T	
+X3b	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Fluid	Ascites	1	T	3	T	
+X4a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Resistant	Fluid	Pleural fluid	1	T	4	T	
+X4b	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Uterine tumor	1	T	4	T	
+X5a	Pre-Therapy	Post-NACT	Pre-NACT	Platinum Resistant	Fluid	Ascites	1	T	5	T	
+X5b	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Ovary tumor	1	T	5	T	
+X6a	Pre-Therapy	Post-NACT & Recurrent	Pre-NACT	Platinum Resistant	Fluid	Ascites	1	T	6	T	M
+X6b	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Tumor	Bowel tumor	1	T	6	T	T
+X6c	Post-Therapy	Post-NACT	Post-NACT	Platinum Resistant	Tumor	Ovary tumor	3	T	6	T	M
+X7a	Pre-Therapy	Recurrent	Pre-NACT	Platinum Resistant	Tumor	Ovary tumor	1	T	7	T	M
+X7b	Post-Therapy	Recurrent	Recurrent	Platinum Sensitive	Tumor	Colon tumor	1	T	7	T	T
+X8a	Control	NA (Control)	NA (Control)	Platinum Sensitive	Fluid	Ascites	1	F	8	T	
+X8s	Control	NA (Control)	NA (Control)	Platinum Sensitive	Tumor	Omental tumor	1	F	8	T	
+X9a	Control	NA (Control)	NA (Control)	Platinum Sensitive	Fluid	Ascites	1	F	9	T	
+X9p	Post-Therapy	Recurrent	Recurrent	Platinum Resistant	Fluid	Pleural fluid	4	T	9	T	
+X9s_1	Control	NA (Control)	NA (Control)	Platinum Sensitive	Tumor	Ovary tumor	1	F	9	T	
+X9s_4	Pre-Therapy	Recurrent	Pre-NACT	Platinum Sensitive	Tumor	Ovary tumor	4	T	9	T	

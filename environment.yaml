@@ -9,3 +9,13 @@ dependencies:
   - pandas
   - gatk4
   - graphviz
+  - bcftools
+  - wget
+  - iqtree
+  - r-base
+  - r-ggplot2
+  - r-ape
+  - r-pheatmap
+  - r-RColorBrewer
+  - bioconductor-treeio
+  - bioconductor-ggtree
