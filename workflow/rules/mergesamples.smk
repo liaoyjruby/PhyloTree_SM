@@ -59,7 +59,7 @@ rule iqtree:
     input:
         "merged/VCFMerged.min4.phy"
     output:
-        "tree/{treename}.treefile"
+        "merged/tree/{treename}.treefile"
     conda:
         "../envs/tree.yaml"
     shell:
@@ -72,7 +72,7 @@ rule iqtree:
 
 rule plot_tree:
     input:
-        "tree/VCFMerged.treefile"
+        "merged/tree/VCFMerged.treefile"
     output:
         "figures/tree_rect.png",
         "figures/tree_circ.png",
