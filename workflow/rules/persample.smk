@@ -58,11 +58,12 @@ rule fix_RG:
     input:
         bam="cigar/{sample}.bam",
         bai="cigar/{sample}.bai",
-        uID=getID
     output:
         # temp("fixRG/{sample}.bam")
         bam=temp("fixRG/{sample}.bam"),
         bai=temp("fixRG/{sample}.bai")
+    params:
+        uID=lambda wildcards: getID(wildcards)
     log:
         "logs/fixRG/{sample}.log"
     conda:
@@ -76,7 +77,7 @@ rule fix_RG:
             -LB "bar" \
             -SM "{wildcards.sample}" \
             -PL "illumina" \
-            -PU "ID{uID}" \
+            -PU "ID{params.uID}" \
             --CREATE_INDEX true  &> {log}
         """
 
