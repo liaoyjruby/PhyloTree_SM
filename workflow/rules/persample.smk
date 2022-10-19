@@ -11,7 +11,9 @@ rule get_mapped:
     output:
         protected("mapped/{sample}.bam")
     shell:
-        "cp {input.bam_path} mapped/{wildcards.sample}.bam"
+        'cp {input.bam_path} mapped/{wildcards.sample}.bam ; '
+        'fname=$(basename {input.bam_path}) ; '
+        'mv mapped/$fname mapped/{wildcards.sample}.bam'
 
 rule deduplicate:
     input:
