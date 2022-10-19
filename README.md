@@ -25,7 +25,7 @@ cd path/to/workdir
 ```
 Then run:
 ```
-snakedeploy deploy-workflow https://github.com/liaoyjruby/PhyloTree_SM .
+snakedeploy deploy-workflow https://github.com/liaoyjruby/PhyloTree_SM . --branch main
 ```
 
 Snakedeploy creates two folders:

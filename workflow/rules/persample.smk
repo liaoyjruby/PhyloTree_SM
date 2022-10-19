@@ -17,8 +17,8 @@ rule deduplicate:
     input:
         "mapped/{sample}.bam"
     output:
-        bam="dedupe/{sample}.bam",
-        bai="dedupe/{sample}.bai", 
+        bam=temp("dedupe/{sample}.bam"),
+        bai=temp("dedupe/{sample}.bai"), 
         metrics="dedupe/{sample}.metrics.txt",
     log:
         "logs/dedupe/{sample}.log"
@@ -37,8 +37,8 @@ rule split_n_cigar_reads:
         ref="references/Homo_sapiens_assembly38.fasta",
         bam="dedupe/{sample}.bam",
     output:
-        bam="cigar/{sample}.bam",
-        bai="cigar/{sample}.bai"
+        bam=temp("cigar/{sample}.bam"),
+        bai=temp("cigar/{sample}.bai")
     log:
         "logs/cigar/{sample}.log"
     conda:
@@ -61,8 +61,8 @@ rule fix_RG:
         uID=getID
     output:
         # temp("fixRG/{sample}.bam")
-        bam="fixRG/{sample}.bam",
-        bai="fixRG/{sample}.bai"
+        bam=temp("fixRG/{sample}.bam"),
+        bai=temp("fixRG/{sample}.bai")
     log:
         "logs/fixRG/{sample}.log"
     conda:
@@ -88,8 +88,8 @@ rule fix_RO:
         bai="fixRG/{sample}.bai"
     output:
         # temp("fixRO/{sample}.bam")
-        bam="fixRO/{sample}.bam",
-        bai="fixRO/{sample}.bai"
+        bam=temp("fixRO/{sample}.bam"),
+        bai=temp("fixRO/{sample}.bai")
     log:
         "logs/fixRO/{sample}.log"
     conda:
@@ -110,8 +110,8 @@ rule haplotype_caller:
         bam="fixRO/{sample}.bam",
         bai="fixRO/{sample}.bai"
     output:
-        gvcf="hcGVCF/{sample}.g.vcf.gz",
-        gvcftbi="hcGVCF/{sample}.g.vcf.gz.tbi"
+        gvcf=protected("hcGVCF/{sample}.g.vcf.gz"),
+        gvcftbi=protected("hcGVCF/{sample}.g.vcf.gz.tbi")
     log:
         "logs/hcGVCF/{sample}.log"
     conda:
@@ -132,8 +132,8 @@ rule genotype_GVCFs:
         gvcf="hcGVCF/{sample}.g.vcf.gz",
         gvcftbi="hcGVCF/{sample}.g.vcf.gz.tbi"
     output:
-        vcf="hcVCF/{sample}.vcf.gz",
-        vcftbi="hcVCF/{sample}.vcf.gz.tbi"
+        vcf=temp("hcVCF/{sample}.vcf.gz"),
+        vcftbi=temp("hcVCF/{sample}.vcf.gz.tbi")
     log:
         "logs/hcVCF/{sample}.log"
     conda:
