@@ -61,7 +61,7 @@ rule iqtree:
     output:
         "merged/tree/{treename}.treefile"
     conda:
-        "../envs/tree.yaml"
+        "../envs/iqtree.yaml"
     shell:
         'iqtree2 -s {input} '
             '-pre tree/{wildcards.treename} '

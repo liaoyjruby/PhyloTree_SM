@@ -47,8 +47,13 @@ The pipeline will include all samples listed in the `units.tsv` sheet in the fin
 
 ### 5. Run workflow
 
+See DAG of pipeline jobs by running:
+```shell
+snakemake -c 1 dag --use-conda
+```
+
 After configuration, run the Snakemake workflow while deploying any necessary software in the process with:
 ```shell
-snakemake --cores all --use-conda
+snakemake -c all --use-conda
 ```
 The main driver script `Snakefile` in the `workflow` subfolder will automatically be detected and executed.
