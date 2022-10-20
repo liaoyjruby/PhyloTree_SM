@@ -38,6 +38,7 @@ rule split_n_cigar_reads:
     input:
         ref="references/Homo_sapiens_assembly38.fasta",
         bam="dedupe/{sample}.bam",
+        bai="dedupe/{sample}.bai"
     output:
         bam=temp("cigar/{sample}.bam"),
         bai=temp("cigar/{sample}.bai")
