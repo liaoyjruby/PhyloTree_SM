@@ -64,7 +64,7 @@ rule iqtree:
     output:
         "merged/tree/{treename}.treefile"
     log:
-        "logs/tree/{treename}.log"
+        "logs/merged/tree/{treename}.log"
     conda:
         "../envs/iqtree.yaml"
     shell:
