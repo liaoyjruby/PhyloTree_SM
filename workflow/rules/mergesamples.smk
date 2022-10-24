@@ -1,4 +1,5 @@
 import pandas as pd
+
 samples = list(pd.read_table(config["units"])['Sample_ID'])
 
 rule build_VCF_list:
@@ -47,28 +48,32 @@ rule vcf2phylip:
         vcfidx="merged/VCFMerged.vcf.gz.tbi"
     output:
         "merged/VCFMerged.min4.phy"
+    log:
+        "logs/tree/vcf2phylip.log"
     conda:
         "../envs/cmd.yaml"
     shell:
         'python {input.vcf2phy} '
             '-i {input.vcf} '
             '--output-prefix merged/VCFMerged '
-            '-m 4'
+            '-m 4 &> {log}'
 
 rule iqtree:
     input:
         "merged/VCFMerged.min4.phy"
     output:
         "merged/tree/{treename}.treefile"
+    log:
+        "logs/tree/iqtree.log"
     conda:
         "../envs/iqtree.yaml"
     shell:
         'iqtree2 -s {input} '
-            '-pre tree/{wildcards.treename} '
+            '-pre merged/tree/{wildcards.treename} '
             '-T AUTO '
             '-st DNA '
             '-redo '
-            '-m GTR'
+            '-m GTR &> {log}'
 
 rule plot_tree:
     input:
