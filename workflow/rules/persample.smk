@@ -114,8 +114,8 @@ rule haplotype_caller:
         bam="fixRO/{sample}.bam",
         bai="fixRO/{sample}.bai"
     output:
-        gvcf=protected("hcGVCF/{sample}.g.vcf.gz"),
-        gvcftbi=protected("hcGVCF/{sample}.g.vcf.gz.tbi")
+        gvcf="hcGVCF/{sample}.g.vcf.gz",
+        gvcftbi="hcGVCF/{sample}.g.vcf.gz.tbi"
     log:
         "logs/hcGVCF/{sample}.log"
     conda:
@@ -136,8 +136,8 @@ rule genotype_GVCFs:
         gvcf="hcGVCF/{sample}.g.vcf.gz",
         gvcftbi="hcGVCF/{sample}.g.vcf.gz.tbi"
     output:
-        vcf=temp("hcVCF/{sample}.vcf.gz"),
-        vcftbi=temp("hcVCF/{sample}.vcf.gz.tbi")
+        vcf="hcVCF/{sample}.vcf.gz",
+        vcftbi="hcVCF/{sample}.vcf.gz.tbi"
     log:
         "logs/hcVCF/{sample}.log"
     conda:
